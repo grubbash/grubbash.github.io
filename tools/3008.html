@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tweedian 3008 Compass</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 class="header">Tweedian 3008 Compass</h1>
+    <div class="container">
+    <div>
+        <p>Find 3 named pillars, and set waypoints in the <i>northwest</i> (right of the screen) corner.</p>
+        <p>Provide pillar coordinates, exactly as they appear in game, here:</p>
+        <ol>
+            <li><input type="text" id="pillar1"></li>
+            <li><input type="text" id="pillar2"></li>
+            <li><input type="text" id="pillar3"></li>
+        </ol>
+    </div>
+    <div>
+    <p>With pillars input, please enter the distance from your waypoints below. For accurate readings, <i>stand at the lowest elevation</i> while reading them. </p>
+    <form>
+        <p>d1 (Distance from pillar 1's corner)</p>
+        <input type="number" id="d1c">
+        
+        <p>d2 (Distance from pillar 2's corner)</p>
+        <input type="number" id="d2c">
+
+        <p>d3 (Distance from pillar 3's corner)</p>
+        <input type="number" id="d3c">
+        <input type="submit" id="submitbut" onclick="doEventSubmit();">
+    </form>
+    </div>
+    <img src="./resources/SCP-3008_map.webp" id="mapImg" style="display:none;">
+    <div id="Result">
+
+        <canvas id="resCvs" width="500" height="500">
+            
+        </canvas>
+
+    </div>
+    </div>
+    
+    
+    <script src="./js/3008mapBuilder.js"></script>
+</body>
+
+</html>
