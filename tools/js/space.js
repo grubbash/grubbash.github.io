@@ -26,9 +26,20 @@ const bodies = [
     }
 ];
 
-const params = new URLSearchParams(window.location.search);
-const seed = params.get("seed") ?? Math.floor(Math.random() *1e9);
-params.set("seed",seed);
+var seed;
+const url = new URL(window.location.href);
+if (url.searchParams.get("seed") != null) {
+    seed = Number(url.searchParams.get("seed"));
+}
+else {
+    seed = Math.floor(Math.random() *1e9);
+    url.searchParams.set("seed",seed);
+    window.history.replaceState({},"",url);
+}
+
+
+
+
 function mulberry32(a) { //from stackoverflow.com
   return function() {
     let t = a += 0x6D2B79F5;
