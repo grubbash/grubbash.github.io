@@ -28,7 +28,7 @@ const bodies = [
 
 const params = new URLSearchParams(window.location.search);
 const seed = params.get("seed") ?? Math.floor(Math.random() *1e9);
-
+params.set("seed",seed);
 function mulberry32(a) { //from stackoverflow.com
   return function() {
     let t = a += 0x6D2B79F5;
